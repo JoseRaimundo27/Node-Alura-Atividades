@@ -1,7 +1,11 @@
 @import url("./header.css" );
 @import url("./banner.css");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
 @import url("carrossel.css");
+@import url("./topicos.css");
+@import url("./contato.css");
+@import url("./footer.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+
 
 :root {
     --cor-de-fundo: #EBECEE;
@@ -10,6 +14,7 @@
     --cor-azul: linear-gradient(98deg, #002F52 35.49%, #326589 165.37%);
 
     --fonte-principal: "Poppins";
+    --fonte-secundaria: "Josefin Sans";
 }
 
 body {

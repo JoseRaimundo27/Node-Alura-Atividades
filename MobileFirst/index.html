@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -35,9 +38,8 @@
                     <a href="#" class="lista-menu__link">Design & UX</a>
                 </li>
             </ul>
-
-
             <img src="./assets/Logo.svg" alt="Logo da Alurabooks" class="container__icone">
+            <h1 class="container__titulo"><b class="container__titulo--negrito">Alura</b>Books</h1>
         </div>
         <div class="container">
             <a href="#"><img src="./assets/Favoritos.svg" alt="Meus favoritos" class="container__icone"></a>
@@ -92,12 +94,56 @@
                 <li class="botões__item""><a href=" #"><img src="./assets/Sacola.svg" alt="Carrinhos de compras"></a>
                 </li>
             </ul>
-
             <a href="#" class="botões__ancora">Saiba mais</a>
-
         </div>
-
     </div>
+
+    <section class="topicos">
+        <h2 class="topicos__titulo">Tópicos visitados recentemente</h2>
+        <ul class="topicos__lista">
+            <li class="topicos__item">
+                <a href="#" class="botões__ancora topicos__link ">Android</a>
+            </li>
+
+            <li class="topicos__item">
+                <a href="#" class="botões__ancora topicos__link ">Marketing Digital</a>
+            </li>
+
+            <li class="topicos__item">
+                <a href="#" class="botões__ancora topicos__link ">Agile</a>
+            </li>
+
+            <li class="topicos__item">
+                <a href="#" class="botões__ancora topicos__link ">Startups</a>
+            </li>
+
+            <li class="topicos__item">
+                <a href="#" class="botões__ancora topicos__link ">HTML e CSS</a>
+            </li>
+
+            <li class="topicos__item">
+                <a href="#" class="botões__ancora topicos__link ">Python</a>
+            </li>
+            
+            <li class="topicos__item">
+                <a href="#" class="botões__ancora topicos__link ">OO</a>
+            </li>
+
+            <li class="topicos__item">
+                <a href="#" class="botões__ancora topicos__link ">Java</a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="contato">
+        <h2 class="contato__titulo">Fique por dentro das novidades!</h2>
+        <p class="contato__descricao">Atualizações de e-books, novos livros, promoções e outros.</p>
+        <input class="contato__email" type="text" placeholder="Cadastre seu e-mail">
+    </section>
+    <hr/>
+    <footer class="rodape">
+        <h2 class="rodape__titulo">Grupo Alura</h2>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
@@ -109,8 +155,6 @@
                 type: "bullets",
             },
         });
-        // Now you can use all slider methods like
-
     </script>
 </body>
 
