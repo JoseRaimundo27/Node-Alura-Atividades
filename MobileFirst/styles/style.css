@@ -12,12 +12,16 @@
     --cor-branca: #FFFFFF;
     --cor-laranja: #EB9B00;
     --cor-azul: linear-gradient(98deg, #002F52 35.49%, #326589 165.37%);
+    --cor-preto: #000000;
 
     --fonte-principal: "Poppins";
     --fonte-secundaria: "Josefin Sans";
 }
 
 body {
+    overflow-x: hidden;
+
+    box-sizing: border-box;
     background-color: var(--cor-de-fundo);
     font-family: var(--fonte-principal);
     font-size: 16px;
