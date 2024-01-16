@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <title>Número Secreto</title>
     <script src="./app/sortearNumero.js" defer></script>
+    <script src="./app/reconhecimentoDeVoz.js" defer></script>
+    <script src="./app/validacao.js"></script>
 </head>
 <body>
     <main class="container">
@@ -15,8 +17,8 @@
         <h3 class="container__descricao">O número secreto está entre <span id="menor-valor">0</span> e <span id="maior-valor">100</span></h3>
 
         <div class="container__mensagem" id="chute">
-            <p class="mensagem__titulo">Você disse:</p>
-            <span class="mensagem__box">20</span>
+            <!-- <p class="mensagem__titulo">Você disse:</p>
+            <span class="mensagem__box">20</span> -->
             <p class="mensagem__resposta">O número secreto é maior <i class="mensagem__icone fa-solid fa-up-long"></i></p>
         </div>
     </main>
