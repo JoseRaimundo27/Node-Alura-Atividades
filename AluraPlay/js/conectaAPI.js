@@ -22,7 +22,6 @@ async function criaVideos (titulo, descricao, url, imagem) {
 
     const conexaoConvertida = await conexao.json();
     return conexaoConvertida
-    
 }
 
 export const conectaAPI = {listaVideos, criaVideos}
