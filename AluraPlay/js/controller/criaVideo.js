@@ -1,4 +1,4 @@
-import { conectaAPI } from "./conectaAPI.js"
+import { conectaAPI } from "../model/conectaAPI.js"
 
 const formulario = document.querySelector("[data-formulario]");
 console.log(formulario)

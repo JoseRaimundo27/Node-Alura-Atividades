@@ -1,4 +1,4 @@
-import { conectaAPI } from "./conectaAPI.js"
+import { conectaAPI } from "../model/conectaAPI.js"
 const lista = document.querySelector("[data-lista]")
 
 function constroiCard ( titulo,descricao, url, imagem) {

@@ -1,4 +1,4 @@
-import { conectaAPI } from "./conectaAPI";
+import { conectaAPI } from "../model/conectaAPI";
 
 async function buscarVideo (event) {
     event.preventDefault();

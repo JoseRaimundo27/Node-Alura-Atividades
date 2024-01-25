@@ -1,4 +1,4 @@
-import { conectaAPI } from "./conectaAPI"
+import { conectaAPI } from "../model/conectaAPI.js"
 const formulario = document.querySelector("[data-formulario]")
 
 async function criarVideo(event) {
