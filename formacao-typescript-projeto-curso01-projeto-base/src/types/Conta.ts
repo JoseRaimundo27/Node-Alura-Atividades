@@ -2,6 +2,12 @@ import { TipoTransacao } from "./TipoTransacao.js";
 import { Transacao } from "./Transacao.js";
 
 let saldo : number = 3000;
+const transacoes: Transacao[] = JSON.parse(localStorage.getItem("transacoes"), (key : string, value: string)=> {
+    if (key == "data") {
+        return new Date(value)
+    }
+    return value;
+}) || [];
 
 function debitar (valor : number) : void { //Metodo privado
     if (valor <= 0) {
@@ -41,7 +47,9 @@ const Conta = { //Metodos publicos
             throw new Error("Transação inválida!");
         }
 
-        console.log(novaTransacao)
+        transacoes.push(novaTransacao)
+        console.log(transacoes)
+        localStorage.setItem("transacoes", JSON.stringify(transacoes))
     }
 }
 

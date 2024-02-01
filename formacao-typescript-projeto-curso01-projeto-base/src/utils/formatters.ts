@@ -15,7 +15,8 @@ export function formatarData (data:Date, formato : FormatoData =  FormatoData.PA
             month: "2-digit",
             year: "numeric"
         })
-    }else if ( formato == FormatoData.DIA_MES) {
+    }
+    else if ( formato == FormatoData.DIA_MES) {
         return data.toLocaleDateString("pt,br", {
             day: "2-digit",
             month: "2-digit",
