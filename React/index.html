@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/PaginaDeLogin.css" />
+    <link rel="stylesheet" href="./styles/CampoDeDigitacao.css" />
+    <title>Login | CodeConnect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"
+        integrity="sha512-8Q6Y9XnTbOE+JNvjBQwJ2H8S+UV4uA6hiRykhdtIyDYZ2TprdNmWOUaKdGzOhyr4dCyk287OejbPvwl7lrfqrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"
+        integrity="sha512-MOCpqoRoisCTwJ8vQQiciZv0qcpROCidek3GTFS6KTk2+y7munJIlKCVkFCYY+p3ErYFXCjmFjnfTTRSC1OHWQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.10/babel.min.js"
+        integrity="sha512-aKni+N2bgewoe8CGZlB9c0IDLU5LQaMEZFNjP6FbDK8gZhdTdNKhYKgZaY/EYL9GKJeJigN/wA7WDAOJShgMAQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Titulo({children}) {
+            return (
+                <h1 className="form__titulo">{children}</h1>
+            )
+        }
+
+        function Subtitulo() {
+            return (
+                <h2 className='form__texto'>Boas-vindas! Faça seu login.</h2>
+            )
+        }
+
+        function CampoDeDigitacao({label,tipo,placeholder,value,setValor}) {
+            return (
+                <div className="form__campo-digitacao">
+                    <label for="email">{label}</label>
+                    <input type="{tipo}" id="email" placeholder={placeholder} 
+                    value = {value}
+                    onChange={(event => setValor(event.target.value))}
+                    required />
+                </div>
+            )
+        }
+
+        function Botao ({children}) {
+            return (
+                <button className="form__botao"  type="submit">{children}</button>
+            )
+        }
+
+        function PaginaDeLogin() {
+            let email = "teste@.com";
+            function substituiValorDoCampo (novoValor) {
+                email = novoValor;
+            }
+            return (
+                <div className="container-login">
+                    <img src="./img/imagem-login.png" alt="Uma mulher negra mexendo no computador" />
+                    <section>
+                        <form >
+                            <Titulo>Login</Titulo>
+                            <Subtitulo />
+                            <CampoDeDigitacao 
+                            label="E-mail ou usuário"
+                            tipo="email"
+                            placeholder="Digite o seu e-mail ou usuário"
+                            value = {email}
+                            setValor = {substituiValorDoCampo()}
+                            />
+
+                            <CampoDeDigitacao 
+                            label="Senha"
+                            tipo="password"
+                            placeholder="Digite a sua senha"
+                            />
+                           
+                           <Botao>Login</Botao>
+                        </form>
+                    </section>
+                </div>
+            )
+        }
+        ReactDOM.createRoot(document.getElementById("root")).render(
+            <PaginaDeLogin />
+        )
+    </script>
+</body>
+
+</html>
