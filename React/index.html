@@ -25,7 +25,8 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
-        function Titulo({children}) {
+
+        function Titulo({ children }) {
             return (
                 <h1 className="form__titulo">{children}</h1>
             )
@@ -37,56 +38,98 @@
             )
         }
 
-        function CampoDeDigitacao({label,tipo,placeholder,value,setValor}) {
+        function CampoDeDigitacao({ label, tipo, placeholder, value, setValor }) {
             return (
                 <div className="form__campo-digitacao">
-                    <label for="email">{label}</label>
-                    <input type="{tipo}" id="email" placeholder={placeholder} 
-                    value = {value}
-                    onChange={(event => setValor(event.target.value))}
-                    required />
+                    <label for={tipo}>{label}</label>
+                    <input type={tipo} id={tipo} placeholder={placeholder}
+                        value={value}
+                        onChange={(event => setValor(event.target.value))}
+                        required />
                 </div>
             )
         }
 
-        function Botao ({children}) {
+        function Botao({ children }) {
             return (
-                <button className="form__botao"  type="submit">{children}</button>
+                <button className="form__botao" type="submit">{children}</button>
+            )
+        }
+
+        function CheckBox() {
+            return (
+                <>
+                    <div className="form__campo-checkbox">
+                        <input type="checkbox" id="lembrar" />
+                        <label for="lembrar"></label>
+                    </div>
+                    <p className="form__opcoes-texto">Lembrar-me</p>
+                </>
+            )
+        }
+
+
+        function Texto({ classe, children }) {
+            return (
+                <p className={classe}>{children}</p>
+            )
+        }
+
+        function ItemRedesSocias({ link, nome }) {
+            return (
+                <li>
+                    <a href={link}>
+                        <img src={`./img/${nome}.svg`} alt={`icone do ${nome}`} />
+                    </a>
+                </li>
             )
         }
 
         function PaginaDeLogin() {
-            let email = "teste@.com";
-            function substituiValorDoCampo (novoValor) {
-                email = novoValor;
+            const [email, setEmail] = React.useState("");
+            const [senha, setSenha] = React.useState("")
+
+            const handleSubmit = (event) => {
+                event.preventDefault();
+                console.log("email" + email)
+                console.log("senha" + senha)
             }
+
             return (
                 <div className="container-login">
                     <img src="./img/imagem-login.png" alt="Uma mulher negra mexendo no computador" />
                     <section>
-                        <form >
+                        <form onSubmit={handleSubmit}>
                             <Titulo>Login</Titulo>
                             <Subtitulo />
-                            <CampoDeDigitacao 
-                            label="E-mail ou usuário"
-                            tipo="email"
-                            placeholder="Digite o seu e-mail ou usuário"
-                            value = {email}
-                            setValor = {substituiValorDoCampo()}
+                            <CampoDeDigitacao
+                                label="E-mail ou usuário"
+                                tipo="email"
+                                placeholder="Digite o seu e-mail ou usuário"
+                                value={email}
+                                setValor={setEmail}
                             />
 
-                            <CampoDeDigitacao 
-                            label="Senha"
-                            tipo="password"
-                            placeholder="Digite a sua senha"
+                            <CampoDeDigitacao
+                                label="Senha"
+                                tipo="password"
+                                placeholder="Digite a sua senha"
+                                value={senha}
+                                setValor={setSenha}
                             />
-                           
-                           <Botao>Login</Botao>
+                            <fieldset className="form__opcoes">
+                                <CheckBox />
+                                <p>
+                                    <a href="#" aria-label="Recuperar senha esquecida">Esqueci a senha</a>
+                                </p>
+                            </fieldset>
+                            <Botao>Login</Botao>
                         </form>
                     </section>
                 </div>
             )
         }
+        
         ReactDOM.createRoot(document.getElementById("root")).render(
             <PaginaDeLogin />
         )
