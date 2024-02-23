@@ -32,9 +32,9 @@
             )
         }
 
-        function Subtitulo() {
+        function Subtitulo({children}) {
             return (
-                <h2 className='form__texto'>Boas-vindas! Faça seu login.</h2>
+                <h2 className='form__texto'>{children}</h2>
             )
         }
 
@@ -80,10 +80,20 @@
                 <li>
                     <a href={link}>
                         <img src={`./img/${nome}.svg`} alt={`icone do ${nome}`} />
+                        {nome}
                     </a>
                 </li>
             )
         }
+
+        function Link({ children }) {
+            return (
+                <a href="#" className="container-links__link">
+                    {children}
+                </a>
+            )
+        }
+
 
         function PaginaDeLogin() {
             const [email, setEmail] = React.useState("");
@@ -101,7 +111,7 @@
                     <section>
                         <form onSubmit={handleSubmit}>
                             <Titulo>Login</Titulo>
-                            <Subtitulo />
+                            <Subtitulo>Boas-vindas! Faça seu login.</Subtitulo>
                             <CampoDeDigitacao
                                 label="E-mail ou usuário"
                                 tipo="email"
@@ -125,11 +135,22 @@
                             </fieldset>
                             <Botao>Login</Botao>
                         </form>
+
+                        <div className="container-links">
+                            <Texto classe="container-links__titulo" >ou entre com outras contas</Texto>
+                            <ul>
+                                <ItemRedesSocias link="https://www.github.com" nome="Github" />
+                                <ItemRedesSocias link="https://www.google.com" nome="Google" />
+                            </ul>
+                            <Texto classe="container-links__texto">Ainda não tem conta?</Texto>
+                            <Link>Crie seu cadrastro</Link>
+
+                        </div>
                     </section>
                 </div>
             )
         }
-        
+
         ReactDOM.createRoot(document.getElementById("root")).render(
             <PaginaDeLogin />
         )
